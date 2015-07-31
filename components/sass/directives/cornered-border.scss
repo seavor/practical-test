@@ -1,0 +1,47 @@
+$cornered-border-translate: translate(100%, -100%);
+
+.cornered-border {
+	&-wrapper {
+		position: relative;
+	}
+
+	&-list {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		li {
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			background-image: url('../images/corner.png');
+			background-size: contain;
+
+			&:nth-of-type(1) {
+				top: 0;
+				left: 0;
+				transform: rotate(-90deg) $cornered-border-translate;
+			}
+
+			&:nth-of-type(2) {
+				top: 0;
+				right: 0;
+				transform: rotate(0deg) $cornered-border-translate;
+			}
+
+			&:nth-of-type(3) {
+				bottom: 0;
+				left: 0;
+				transform: rotate(180deg) $cornered-border-translate;
+			}
+
+			&:nth-of-type(4) {
+				bottom: 0;
+				right: 0;
+				transform: rotate(90deg) $cornered-border-translate;
+			}
+		}
+	}
+}

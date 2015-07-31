@@ -1,3 +1,135 @@
+/* Library
+**************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* Components
+**************************************/
+/* Directives
+**************************************/
+.cornered-border-wrapper {
+  position: relative;
+}
+.cornered-border-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cornered-border-list li {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-image: url("../images/corner.png");
+  background-size: contain;
+}
+.cornered-border-list li:nth-of-type(1) {
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg) translate(100%, -100%);
+}
+.cornered-border-list li:nth-of-type(2) {
+  top: 0;
+  right: 0;
+  transform: rotate(0deg) translate(100%, -100%);
+}
+.cornered-border-list li:nth-of-type(3) {
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg) translate(100%, -100%);
+}
+.cornered-border-list li:nth-of-type(4) {
+  bottom: 0;
+  right: 0;
+  transform: rotate(90deg) translate(100%, -100%);
+}
+
+header {
+  width: 100%;
+  border: 1px solid green;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+footer {
+  width: 100%;
+  border: 1px solid green;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Views
+**************************************/
+/* Site Styles
+**************************************/
+body {
+  padding: 30px 20px 20px;
+  position: relative;
+  font-size: 62.5%;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+}
+
+.page-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 5px;
+}
 
 /*# sourceMappingURL=main.css.map */

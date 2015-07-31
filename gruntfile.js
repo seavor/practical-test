@@ -8,6 +8,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-script-link-tags');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.initConfig({
 
@@ -17,6 +18,18 @@ module.exports = function(grunt) {
       js: ['site/js'],
       lib: ['site/js/lib'],
       app: ['site/js/app']
+    },
+
+    copy: {
+      lib: {
+        files: [{
+          expand: true,
+          cwd: 'components/js/lib',
+          src: ['**/*.js'],
+          dest: 'site/js/lib/',
+          filter: 'isFile'
+        }]
+      },
     },
 
     sass: {
@@ -124,7 +137,9 @@ module.exports = function(grunt) {
           closeTag: '<!-- /lib files -->'
         },
         src: [
-            'site/js/lib/*.js'
+            'site/js/lib/jquery/**/*.js',
+            'site/js/lib/angular/**/*.js',
+            'site/js/lib/**/*.js'
           ],
         dest: 'site/index.html'
       },
@@ -134,7 +149,7 @@ module.exports = function(grunt) {
           openTag: '<!-- app files -->',
           closeTag: '<!-- /app files -->'
         },
-        src: [ /* 'site/js/app/*.js', */ 'site/js/app/**/*.js' ],
+        src: [  'site/js/app/*.js',  'site/js/app/**/*.js' ],
         dest: 'site/index.html'
       }
     },
@@ -164,7 +179,7 @@ module.exports = function(grunt) {
 
       lib: {
         files: ['components/js/lib/**/*.js'],
-        tasks: ['clean:lib', 'uglify:lib', 'tags:lib']
+        tasks: ['clean:lib', 'copy:lib', 'tags:lib']
       },
 
       sass: {
@@ -184,7 +199,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('cssStack', ['sass', 'autoprefixer', 'cssmin']);
-  grunt.registerTask('stack', ['clean:all', 'cssStack', 'ngtemplates']);
+  grunt.registerTask('stack', ['clean:all', 'copy:lib', 'cssStack', 'ngtemplates']);
 
   grunt.registerTask('default', ['stack', 'uglify:dev', 'tags', 'watch']);
   grunt.registerTask('build', ['stack', 'uglify:pro', 'tags']);
