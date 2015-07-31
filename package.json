@@ -1,0 +1,15 @@
+{
+  "name": "IWS_Demo",
+  "version": "1.0.0",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass" : "~0.9.2",
+    "grunt-contrib-cssmin" : "~0.12.2",
+    "grunt-contrib-uglify" : "~0.2.2",
+    "grunt-angular-templates": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-script-link-tags" : "~1.0.2",
+    "grunt-autoprefixer": "~2.2.0"
+  }
+}
