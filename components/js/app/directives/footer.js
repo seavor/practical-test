@@ -1,8 +1,7 @@
 APP.directive('footer', function(){
 
 	function linker($scope, element, attrs) {
-		console.log('Footer Registered');
-
+		
 	}
 
 	return {

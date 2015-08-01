@@ -1,7 +1,6 @@
 APP.directive('header', function(){
 
 	function linker($scope, element, attrs) {
-		console.log('Header Registered');
 
 	}
 

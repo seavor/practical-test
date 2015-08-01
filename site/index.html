@@ -1,32 +1,32 @@
 <html ng-app="app">
 <head>
-	<title>{{pageTitle}}</title>
-	<meta name="description" content="{{metaDescription}}">
-	<meta name="description" content="{{metaKeywords}}">
-	<!-- css files -->
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!-- /css files -->
-	<!-- lib files -->
-	<script type="text/javascript" src="js/lib/jquery/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
-	<script type="text/javascript" src="js/lib/angular/modules/angular-ui-router.min.js"></script>
-	<!-- /lib files -->
-	<!-- app files -->
-	<script type="text/javascript" src="js/app/main.js"></script>
-	<script type="text/javascript" src="js/app/controllers/HomeCtrl.js"></script>
-	<script type="text/javascript" src="js/app/directives/cornered-border.js"></script>
-	<script type="text/javascript" src="js/app/directives/footer.js"></script>
-	<script type="text/javascript" src="js/app/directives/header.js"></script>
-	<script type="text/javascript" src="js/app/services/api.js"></script>
-	<script type="text/javascript" src="js/app/services/templates.js"></script>
-	<!-- /app files -->
+  <title>{{pageTitle}}</title>
+  <meta name="description" content="{{metaDescription}}">
+  <meta name="description" content="{{metaKeywords}}">
+  <!-- css files -->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!-- /css files -->
+  <!-- lib files -->
+  <script type="text/javascript" src="js/lib/jquery/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="js/lib/angular/modules/angular-ui-router.min.js"></script>
+  <!-- /lib files -->
+  <!-- app files -->
+  <script type="text/javascript" src="js/app/main.js"></script>
+  <script type="text/javascript" src="js/app/controllers/HomeCtrl.js"></script>
+  <script type="text/javascript" src="js/app/controllers/RoomsCtrl.js"></script>
+  <script type="text/javascript" src="js/app/directives/cornered-border.js"></script>
+  <script type="text/javascript" src="js/app/directives/footer.js"></script>
+  <script type="text/javascript" src="js/app/directives/header.js"></script>
+  <script type="text/javascript" src="js/app/directives/main-nav.js"></script>
+  <script type="text/javascript" src="js/app/directives/master-wrapper.js"></script>
+  <script type="text/javascript" src="js/app/services/api.js"></script>
+  <script type="text/javascript" src="js/app/services/resolvers.js"></script>
+  <script type="text/javascript" src="js/app/services/templates.js"></script>
+  <!-- /app files -->
 </head>
-<body style="background-image: url({{false || 'images/home.jpg'}})">
-	<div class="page-content" cornered-border>
-		<header></header>
-		<div class="view-content" ng-view></div>
-		<footer></footer>
-	</div>
-	<script src="//localhost:35729/livereload.js"></script>
+<body>
+  <div ui-view></div>
+  <script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>

@@ -1,7 +1,5 @@
 APP.directive("header", function() {
-    function linker($scope, element, attrs) {
-        console.log("Header Registered");
-    }
+    function linker($scope, element, attrs) {}
     return {
         restrict: "E",
         link: linker,

@@ -1,7 +1,5 @@
 APP.directive("footer", function() {
-    function linker($scope, element, attrs) {
-        console.log("Footer Registered");
-    }
+    function linker($scope, element, attrs) {}
     return {
         restrict: "E",
         link: linker,

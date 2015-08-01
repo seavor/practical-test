@@ -1,0 +1,9 @@
+<nav class="main-nav">
+	<ul class="main-nav-list">
+		<li ng-repeat="link in links | orderBy: link.SORTORDER">
+			<a class="main-nav-link" ng-class="{active: link.PATH === currentPath}" href="{{link.PATH}}">{{link.LINKTITLE}}</a>
+		</li>
+	</ul>
+
+	<button class="main-nav-book-now small-corners" cornered-border>Book Now</button>
+</nav>

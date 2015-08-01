@@ -6,14 +6,27 @@ APP.config([ "$stateProvider", "$urlRouterProvider", "$locationProvider", functi
     $stateProvider.state("home", {
         url: "/",
         templateUrl: "templates/views/home.html",
-        controller: "HomeCtrl"
+        controller: "HomeCtrl",
+        resolve: {
+            PageData: function(Resolvers) {
+                return Resolvers.pageData("home");
+            }
+        }
+    }).state("rooms", {
+        url: "/rooms",
+        templateUrl: "templates/views/rooms.html",
+        controller: "RoomsCtrl",
+        resolve: {
+            PageData: function(Resolvers) {
+                return Resolvers.pageData("detail");
+            }
+        }
     });
 } ]);
 
 APP.run(function($rootScope, $location, $state) {
-    console.log("App Run Cycle");
-    $rootScope.$on("$stateChangeStart", function(event, to, toParams, from, fromParams) {
-        console.log("App Route Cycle");
+    $rootScope.$on("$stateChangeStart", function(event, to, toParams, from, fromParams) {});
+    $rootScope.$on("$stateChangeSuccess", function(event, to, toParams, from, fromParams) {
+        $rootScope.currentPath = to.url;
     });
-    $rootScope.$on("$stateChangeSuccess", function(event, to, toParams, from, fromParams) {});
 });

@@ -1,6 +1,8 @@
 /* Library
 **************************************/
 @import 'library/reset';
+@import 'library/typography';
+@import 'library/variables';
 @import 'library/helper';
 
 
@@ -11,9 +13,11 @@
 
 /* Directives
 **************************************/
-@import 'directives/cornered-border';
+@import 'directives/master-wrapper';
 @import 'directives/header';
 @import 'directives/footer';
+@import 'directives/main-nav';
+@import 'directives/cornered-border';
 
 
 /* Views
@@ -21,27 +25,3 @@
 
 
 
-/* Site Styles
-**************************************/
-
-body {
-	padding: 30px 20px 20px;
-	position: relative;
-	font-size: 62.5%;
-	height: 100vh;
-	width: 100vw;
-	overflow: hidden;
-
-	background-position: center;
-	background-size: cover;
-}
-
-.page-content {
-	position: relative;
-	
-	width: 100%;
-	height: 100%;
-
-	border: 1px solid white;
-	border-radius: 5px;
-}

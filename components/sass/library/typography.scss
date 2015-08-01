@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "DarbySans";
+  font-weight: light;
+  font-style: normal;
+
+  src: url("../fonts/DarbySans-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DarbySans";
+  font-weight: normal;
+  font-style: normal;
+
+  src: url("../fonts/DarbySans-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DarbySansPoster";
+  font-weight: thin;
+  font-style: normal;
+
+  src: url("../fonts/DarbySansPoster-XLight.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DarbySansPoster";
+  font-weight: light;
+  font-style: normal;
+
+  src: url("../fonts/DarbySansPoster-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "DarbySansPoster";
+  font-weight: normal;
+  font-style: normal;
+
+  src: url("../fonts/DarbySansPoster-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Mercury";
+  font-weight: normal;
+  font-style: normal;
+
+  src: url("../fonts/Mercury-TextG1Roman.otf") format("opentype");
+}
+
+$primary-font: 'DarbySans';
+$secondary-font: 'Mercury';
+
+$default-font-stack: $primary-font, 'Ariel', sans-serif;

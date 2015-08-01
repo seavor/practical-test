@@ -10,7 +10,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-clean": "~0.6.0",
     "grunt-script-link-tags" : "~1.0.2",
-    "grunt-autoprefixer": "~2.2.0",
+    "grunt-postcss": "~0.5.5",
+    "autoprefixer-core": "~5.2.1",
     "grunt-contrib-copy": "v0.8.0"
   }
 }

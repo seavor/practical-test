@@ -3,3 +3,21 @@
 *:before {
 	box-sizing: border-box;
 }
+
+body {
+	font-family: $default-font-stack;
+	font-size: 62.5%;
+	position: relative;
+	overflow: auto;
+}
+
+a,
+button {
+	cursor: pointer;
+	color: inherit;
+	border: 0;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}

@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-script-link-tags');
-  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.initConfig({
@@ -154,13 +154,13 @@ module.exports = function(grunt) {
       }
     },
 
-    autoprefixer: {
+    postcss: {
       options: {
         expand: true,
         flatten: true,
         map: true,
-        browsers: [
-          '> %1'
+        processors: [
+          require('autoprefixer-core')({browsers: ['> 1%', 'last 2 versions', 'IE >= 10']})
         ]
       },
 
@@ -184,7 +184,7 @@ module.exports = function(grunt) {
 
       sass: {
         files: ['components/sass/**/*.scss'],
-        tasks: ['clean:css', 'cssStack', 'tags:css']
+        tasks: ['cssStack', 'tags:css']
       },
       html: {
         files: ['site/templates/**/*.html'],
@@ -198,7 +198,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('cssStack', ['sass', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('cssStack', ['clean:css', 'sass', 'postcss', 'cssmin']);
   grunt.registerTask('stack', ['clean:all', 'copy:lib', 'cssStack', 'ngtemplates']);
 
   grunt.registerTask('default', ['stack', 'uglify:dev', 'tags', 'watch']);
