@@ -55,6 +55,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'site/css',
+          dest: 'site/css',
           src: ['*.css']
         }]
       }
@@ -198,10 +199,10 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('cssStack', ['clean:css', 'sass', 'postcss', 'cssmin']);
+  grunt.registerTask('cssStack', ['clean:css', 'sass', 'postcss']);
   grunt.registerTask('stack', ['clean:all', 'copy:lib', 'cssStack', 'ngtemplates']);
 
   grunt.registerTask('default', ['stack', 'uglify:dev', 'tags', 'watch']);
-  grunt.registerTask('build', ['stack', 'uglify:pro', 'tags']);
+  grunt.registerTask('build', ['stack', 'cssmin', 'uglify:pro', 'tags']);
 
 }
