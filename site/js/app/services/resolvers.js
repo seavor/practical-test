@@ -1,13 +1,18 @@
-APP.service("Resolvers", [ "$q", "$state", "$rootScope", "API", function($q, $state, $rootScope, API) {
+APP.service("Resolvers", [ "$q", "$state", "$rootScope", "API", "Storage", function($q, $state, $rootScope, API, Storage) {
     return {
         pageData: function(route) {
             var defer = $q.defer();
-            API.get(route).success(function(data) {
-                $rootScope.backgroundImage = data.SLIDES[0].IMAGE;
-                defer.resolve(data);
-            }).error(function(data) {
-                defer.reject(data);
-            });
+            if (!Storage[route]) {
+                API.get(route).success(function(data) {
+                    Storage[route] = JSON.stringify(data);
+                    defer.resolve(data);
+                }).error(function(data) {
+                    defer.reject(data);
+                });
+            } else {
+                defer.resolve(JSON.parse(Storage[route]));
+            }
+            console.dir(Storage);
             return defer.promise;
         }
     };

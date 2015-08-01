@@ -17,7 +17,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('templates/directives/master-wrapper.html',
-    "<div class=master-wrapper><div class=page-background style=\"background-image: url({{backgroundImage}})\"></div><div class=page-content cornered-border><header></header><div class=view-content ng-transclude></div><footer></footer></div></div>"
+    "<div class=master-wrapper><div class=page-background style=\"background-image: url({{model.SLIDES[0].IMAGE || 'images/home.jpg'}})\"></div><div class=page-content cornered-border><header></header><div class=view-content ng-transclude></div><footer></footer></div></div>"
   );
 
 

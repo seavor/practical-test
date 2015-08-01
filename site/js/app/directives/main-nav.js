@@ -1,8 +1,13 @@
-APP.directive("mainNav", function(API) {
+APP.directive("mainNav", function(API, Storage) {
     function linker($scope, element, attrs) {
-        API.get("navigation").success(function(data) {
-            $scope.links = data.NAVIGATION;
-        });
+        if (!Storage.navigation) {
+            API.get("navigation").success(function(data) {
+                Storage.navigation = JSON.stringify(data.NAVIGATION);
+                $scope.links = data.NAVIGATION;
+            });
+        } else {
+            $scope.links = JSON.parse(Storage.navigation);
+        }
     }
     return {
         restrict: "E",
