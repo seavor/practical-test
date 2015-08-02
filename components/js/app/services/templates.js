@@ -2,7 +2,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('templates/directives/footer.html',
-    "<ul class=footer-info><li>101 State Street</li><li>La Crosse, WI 54601</li><li>1-866-697-7300</li><li>sign up for emails</li></ul><ul class=footer-icons><li><a class=footer-icons-facebook href=#></a></li><li><a class=footer-icons-twitter href=#></a></li><li><a class=footer-icons-instagram href=#></a></li></ul>"
+    "<ul class=footer-icons><li><a class=footer-icons-facebook href=#></a></li><li><a class=footer-icons-twitter href=#></a></li><li><a class=footer-icons-instagram href=#></a></li></ul><ul class=footer-info><li>101 State Street</li><li>La Crosse, WI 54601</li><li>1-866-697-7300</li><li>sign up for emails</li></ul>"
   );
 
 

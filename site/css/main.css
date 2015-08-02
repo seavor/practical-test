@@ -109,6 +109,10 @@ button {
 **************************************/
 /* Directives
 **************************************/
+/*
+ * 1) VW for more a more responsive box-shadow
+ * 	  PX backup for graceful degredation
+ */
 .master-wrapper {
   position: relative;
   padding: 30px 20px 20px;
@@ -122,6 +126,10 @@ button {
   width: 100vw;
   background-position: center;
   background-size: cover;
+  box-shadow: 0px 0px 200px black inset;
+  /* 1 */
+  box-shadow: 0px 0px 16vw black inset;
+  /* 1 */
 }
 
 .page-content {
@@ -153,12 +161,81 @@ header .site-id {
 }
 
 footer {
-  width: 100%;
-  border: 1px solid green;
+  color: white;
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-icons {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+}
+.footer-icons li {
+  float: left;
+  margin: 0 5px;
+  position: relative;
+}
+.footer-icons li:first-of-type {
+  margin-left: 0;
+}
+.footer-icons li:last-of-type {
+  margin-right: 0;
+}
+.footer-icons li::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 75%;
+  width: 75%;
+  border-radius: 50%;
+  z-index: 1;
+  -webkit-transition: background-color 0.1s ease-in;
+          transition: background-color 0.1s ease-in;
+}
+.footer-icons li:hover::before {
+  background-color: white;
+}
+.footer-icons a {
+  display: block;
+  height: 24px;
+  width: 28px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 2;
+}
+.footer-icons-facebook {
+  background-image: url("../images/facebook-icon.png");
+}
+.footer-icons-twitter {
+  background-image: url("../images/twitter-icon.png");
+}
+.footer-icons-instagram {
+  background-image: url("../images/instagram-icon.png");
+}
+.footer-info {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .05em;
+}
+.footer-info li {
+  float: left;
+}
+.footer-info li:not(:last-of-type)::after {
+  content: '|';
+  padding: 10px;
 }
 
 .main-nav {
@@ -184,10 +261,10 @@ footer {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding: 0 5%;
   width: 100%;
   -webkit-flex-shrink: 1;
@@ -195,10 +272,15 @@ footer {
           flex-shrink: 1;
 }
 .main-nav-list li {
-  padding: 10px;
+  padding: 0 20px;
+}
+.main-nav-link {
+  border-bottom: 3px solid transparent;
+  -webkit-transition: border-color 0.1s ease-in;
+          transition: border-color 0.1s ease-in;
 }
 .main-nav-link:hover, .main-nav-link.active {
-  border-bottom: 3px solid white;
+  border-color: white;
 }
 .main-nav-book-now {
   background: black;
@@ -209,6 +291,8 @@ footer {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
+  -webkit-transition: background 0.1s ease-in;
+          transition: background 0.1s ease-in;
 }
 .main-nav-book-now:hover {
   background: rgba(0, 0, 0, 0.75);
